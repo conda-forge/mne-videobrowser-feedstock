@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - mne >=1.10
+    - mne-base >=1.10
     - mne-qt-browser >=0.7
     - pyqt >=5.15,<6
     - opencv >=4.8
@@ -47,3 +47,4 @@ about:
 extra:
   recipe-maintainers:
     - ttaiv
+    - larsoner
