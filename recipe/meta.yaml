@@ -1,5 +1,5 @@
 {% set name = "mne-videobrowser" %}
-{% set version = "0.1.8" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mne_videobrowser-{{ version }}.tar.gz
-  sha256: 8fb8c0492c5b6b3a74216a8af0a9127a8fe87002bcb1a9fcbdb07eba9747e227
+  sha256: 517c582345fa9da08750e8f52ba2ddc2a38f8b6371a644c5e6f853029f2f9b00
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
