@@ -1,5 +1,5 @@
 {% set name = "mne-videobrowser" %}
-{% set version = "0.1.8" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mne_videobrowser-{{ version }}.tar.gz
-  sha256: 8fb8c0492c5b6b3a74216a8af0a9127a8fe87002bcb1a9fcbdb07eba9747e227
+  sha256: ab8263c2fdac10bbfaa1080627ac1bd9549b65f9b3bbd0f9e2fb48135ed48b08
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -23,8 +23,9 @@ requirements:
     - python >={{ python_min }}
     - mne-base >=1.10
     - mne-qt-browser >=0.7
-    - pyqt >=5.15,<6
-    - opencv >=4.8
+    - pyside6
+    - opencv >=4.8 *headless*  # avoid GUI dependencies (Qt) here
+    - psutil
     - python-sounddevice >=0.5
 
 test:
