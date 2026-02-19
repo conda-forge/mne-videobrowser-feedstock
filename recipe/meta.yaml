@@ -23,8 +23,8 @@ requirements:
     - python >={{ python_min }}
     - mne-base >=1.10
     - mne-qt-browser >=0.7
-    - pyqt >=5.15,<6
-    - opencv >=4.8
+    - pyside
+    - opencv >=4.8 *headless*  # avoid GUI dependencies (Qt) here
     - python-sounddevice >=0.5
 
 test:
